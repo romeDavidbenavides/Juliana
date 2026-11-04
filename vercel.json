@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "outputDirectory": "public",
+  "headers": [
+    { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] },
+    { "source": "/respuestas", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] }
+  ]
+}

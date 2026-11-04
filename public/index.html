@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>María Juliana · 30 años</title>
+  <meta name="description" content="Te invito a celebrar mi cumpleaños · Jueves 05 de noviembre, 7:00 pm · Restaurante Zama">
+  <meta name="theme-color" content="#e8ecf2">
+
+  <!-- Vista previa en WhatsApp (og:url y og:image deben ser la URL pública final) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Cumpleaños de María Juliana">
+  <meta property="og:title" content="María Juliana · 30 años 🎂">
+  <meta property="og:description" content="Te invito a celebrar mi cumpleaños · Jueves 05 de noviembre, 7:00 pm · Restaurante Zama">
+  <meta property="og:url" content="https://juliana-30.vercel.app/">
+  <meta property="og:image" content="https://juliana-30.vercel.app/assets/og.jpg">
+  <meta property="og:image:secure_url" content="https://juliana-30.vercel.app/assets/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Invitación al cumpleaños 30 de María Juliana">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="preload" as="image" href="/assets/juliana.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <main class="app">
+
+    <!-- 1. PORTADA -->
+    <section class="screen is-active" id="s-portada" data-step="portada">
+      <div class="stage">
+
+        <div class="card">
+          <img src="/assets/juliana.jpg" alt="María Juliana con sus sobrinos" class="photo">
+        </div>
+
+        <span class="string s1"></span><span class="string s2"></span>
+        <span class="string s3"></span><span class="string s4"></span>
+        <span class="string s5"></span><span class="string s6"></span>
+        <span class="bead b1"></span><span class="bead b4"></span>
+        <span class="bead b5"></span><span class="bead b6"></span>
+        <div class="cloud c-left"><svg viewBox="0 0 200 110" aria-hidden="true"><path d="M30 105h150a22 22 0 0 0 4-43.6A42 42 0 0 0 104 37 46 46 0 0 0 26 64 21 21 0 0 0 30 105z"/></svg></div>
+        <div class="cloud c-right"><svg viewBox="0 0 200 110" aria-hidden="true"><path d="M30 105h150a22 22 0 0 0 4-43.6A42 42 0 0 0 104 37 46 46 0 0 0 26 64 21 21 0 0 0 30 105z"/></svg></div>
+        <div class="cloud c-left2"><svg viewBox="0 0 200 110" aria-hidden="true"><path d="M30 105h150a22 22 0 0 0 4-43.6A42 42 0 0 0 104 37 46 46 0 0 0 26 64 21 21 0 0 0 30 105z"/></svg></div>
+        <div class="cloud c-right2"><svg viewBox="0 0 200 110" aria-hidden="true"><path d="M30 105h150a22 22 0 0 0 4-43.6A42 42 0 0 0 104 37 46 46 0 0 0 26 64 21 21 0 0 0 30 105z"/></svg></div>
+
+        <div class="namecard">
+          <p class="invite">Te invito a celebrar el cumpleaños de</p>
+          <h1 class="name">María Juliana</h1>
+        </div>
+
+        <button class="btn i-btn" data-next>Déjame un mensajito 💌</button>
+
+        <div class="badge"><strong>30</strong><span>AÑOS</span></div>
+
+        <div class="info">
+          <p class="i-date">Jueves 05 de noviembre</p>
+          <p class="i-time">7:00 pm · Restaurante Zama</p>
+          <hr class="i-line">
+          <p class="i-addr">Calle 20 # 40-39 (Av. Los Estudiantes)</p>
+          <p class="i-floor">Segundo / tercer piso</p>
+        </div>
+      </div>
+      <button class="star" type="button" aria-label="Mensajes de la cumpleañera" data-star>★</button>
+    </section>
+
+    <!-- 2. NOMBRE -->
+    <section class="screen" id="s-nombre" data-step="nombre">
+      <form class="panel" data-form="nombre">
+        <p class="kicker">3 preguntitas para mí</p>
+        <h2 class="script">¿Quién me escribe?</h2>
+        <label class="field">
+          <span>Tu nombre</span>
+          <input name="nombre" maxlength="80" autocomplete="name" placeholder="Escribe tu nombre" required>
+        </label>
+        <input name="web" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="error" aria-live="polite"></p>
+        <button class="btn" type="submit">Continuar</button>
+        <button class="link" type="button" data-home>← Volver a la invitación</button>
+      </form>
+    </section>
+
+    <!-- 3-5. PREGUNTAS -->
+    <section class="screen" data-step="q1">
+      <form class="panel" data-form="admiras">
+        <p class="kicker">Pregunta 1 de 3</p>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+        <h2 class="question">¿Qué es lo que más admiras de mí?</h2>
+        <textarea name="admiras" maxlength="2000" rows="5" placeholder="Escribe aquí…" required></textarea>
+        <p class="error" aria-live="polite"></p>
+        <button class="btn" type="submit">Continuar</button>
+        <button class="link" type="button" data-back>← Atrás</button>
+      </form>
+    </section>
+
+    <section class="screen" data-step="q2">
+      <form class="panel" data-form="palabras">
+        <p class="kicker">Pregunta 2 de 3</p>
+        <div class="dots"><i class="on"></i><i class="on"></i><i></i></div>
+        <h2 class="question">¿Qué palabras te gustaría regalarme en mi cumpleaños?</h2>
+        <textarea name="palabras" maxlength="2000" rows="5" placeholder="Escribe aquí…" required></textarea>
+        <p class="error" aria-live="polite"></p>
+        <button class="btn" type="submit">Continuar</button>
+        <button class="link" type="button" data-back>← Atrás</button>
+      </form>
+    </section>
+
+    <section class="screen" data-step="q3">
+      <form class="panel" data-form="recuerdo" data-last>
+        <p class="kicker">Pregunta 3 de 3</p>
+        <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <h2 class="question">Cuéntame un recuerdo lindo o feliz conmigo</h2>
+        <textarea name="recuerdo" maxlength="3000" rows="6" placeholder="Escribe aquí…" required></textarea>
+        <p class="error" aria-live="polite"></p>
+        <button class="btn" type="submit">Enviar</button>
+        <button class="link" type="button" data-back>← Atrás</button>
+      </form>
+    </section>
+
+    <!-- 6. GRACIAS -->
+    <section class="screen" data-step="gracias">
+      <div class="panel thanks">
+        <div class="check">✓</div>
+        <h2 class="question">¡Tu encuesta fue procesada con éxito!</h2>
+        <p class="script big">¡Gracias!</p>
+        <p class="muted">Nos vemos el jueves 05 de noviembre a las 7:00 pm 💙</p>
+        <button class="btn" type="button" data-home>Volver a la invitación</button>
+      </div>
+    </section>
+
+  </main>
+  <!-- Acceso de Juliana a sus mensajes -->
+  <dialog class="star-dialog" id="star-dialog">
+    <form method="dialog" id="star-form">
+      <p class="kicker">Solo para la cumpleañera</p>
+      <h2 class="script">Mis mensajes</h2>
+      <input type="password" name="password" placeholder="Contraseña" autocomplete="off">
+      <p class="error" aria-live="polite"></p>
+      <button class="btn" type="submit" value="ok">Entrar</button>
+      <button class="link" type="button" data-close>Cancelar</button>
+    </form>
+  </dialog>
+  <script src="/app.js"></script>
+</body>
+</html>
